@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chúc mừng 8/3 💖</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+</head>
+
+<body>
+  <div class="bg-layers">
+    <div class="grain"></div>
+    <div class="blobs">
+      <span class="blob b1"></span>
+      <span class="blob b2"></span>
+      <span class="blob b3"></span>
+    </div>
+    <div id="stars"></div>
+    <div id="sunGlow"></div>
+    <div id="hearts"></div>
+    <div id="petals"></div>
+    <div id="flowers"></div>
+    <div id="confettiLayer"></div>
+  </div>
+
+  <div class="theme-switcher card" aria-label="Tuỳ chọn giao diện theo thời gian">
+    <div class="theme-icon-group" role="group" aria-label="Chọn giao diện nhanh">
+      <button class="theme-icon" data-theme-mode="auto" aria-label="Tự động">🪄</button>
+      <button class="theme-icon" data-theme-mode="morning" aria-label="Buổi sáng">🌤️</button>
+      <button class="theme-icon" data-theme-mode="afternoon" aria-label="Buổi chiều">🌇</button>
+      <button class="theme-icon" data-theme-mode="night" aria-label="Buổi tối">🌙</button>
+    </div>
+  </div>
+
+  <main class="app">
+    <!-- Screen 1 -->
+    <section class="screen screen-1 active" data-screen="1" aria-hidden="false">
+      <div class="card hero">
+        <div class="badge">💐 08/03</div>
+        <h1 class="title">Chúc mừng ngày Quốc tế Phụ nữ</h1>
+        <p class="subtitle">
+          Một chút dịu dàng dành cho những người đặc biệt ✨<br />
+          Chúc 2 bạn mùng 8/3 vui vẻ nhéeeeeee
+        </p>
+
+        <div class="photo-belts" aria-label="Dòng ảnh kỷ niệm">
+          <div class="belt belt--left" id="heroBeltLeft"></div>
+          <div class="choice-grid">
+            <button class="choice-btn" data-girl="Dung">
+              <span class="choice-emoji">🌸</span>
+              <span class="choice-name">Quỳnh Anh</span>
+              <span class="choice-hint">click vô đây nè</span>
+            </button>
+
+            <button class="choice-btn" data-girl="ha">
+              <span class="choice-emoji">🌷</span>
+              <span class="choice-name">Tùng Chi</span>
+              <span class="choice-hint">click vô đây nè</span>
+            </button>
+          </div>
+          <div class="belt belt--right" id="heroBeltRight"></div>
+        </div>
+
+
+
+        <button class="explore-btn" id="openGardenFromHero">🌺 Khám phá vườn điều ước</button>
+
+        <div class="tiny">
+          <span></span> Desigin and build by <code>Văn Tài</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 2 -->
+    <section class="screen screen-2" data-screen="2" aria-hidden="true">
+      <header class="topbar">
+        <button class="back-btn" id="backTo1" aria-label="Quay lại chọn tên">←</button>
+        <div class="who">
+          <span class="pill">Gửi đến</span>
+          <strong id="girlNameTop">...</strong>
+        </div>
+        <div class="topbar-actions">
+          <button class="garden-btn" id="openGardenBtn" aria-label="Mở vườn điều ước">🌺</button>
+          <button class="mute-btn" id="toggleMusic" aria-label="Bật/tắt nhạc">♪</button>
+        </div>
+      </header>
+
+      <div class="stage">
+        <div class="gallery gallery-bg" id="galleryBg" aria-hidden="true"></div>
+        <div class="gallery" id="gallery" aria-label="Bộ sưu tập ảnh"></div>
+
+        <button class="center-btn" id="openLetterBtn" aria-label="Nhận lời chúc">
+          <span class="center-btn__ring"></span>
+          <span class="center-btn__inner">
+            <span class="center-btn__icon">💌</span>
+            <span class="center-btn__text">Nhận lời chúc</span>
+          </span>
+        </button>
+
+        <div class="gift-sequence" id="giftSequence" aria-hidden="true">
+          <div class="gift-box" id="giftBox" role="button" tabindex="0" aria-label="Mở hộp quà">
+            <div class="gift-lid"></div>
+            <div class="gift-body"></div>
+            <div class="gift-ribbon gift-ribbon--v"></div>
+            <div class="gift-ribbon gift-ribbon--h"></div>
+            <div class="gift-tag">🎁</div>
+          </div>
+          <p class="gift-text" id="giftText">Bấm lần nữa để mở quà nha ✨</p>
+        </div>
+
+        <div class="stage-hint">Di chuột để cảm nhận “không gian” ✨</div>
+      </div>
+    </section>
+
+    <!-- Screen 3 -->
+    <section class="screen screen-3" data-screen="3" aria-hidden="true">
+      <header class="topbar">
+        <button class="back-btn" id="backTo2" aria-label="Quay lại ảnh">←</button>
+        <div class="who">
+          <span class="pill">Thư gửi</span>
+          <strong id="girlNameLetter">...</strong>
+        </div>
+        <div style="width:42px"></div>
+      </header>
+
+      <div class="letter-wrap">
+        <div class="envelope" id="envelope">
+          <div class="env-back"></div>
+          <div class="env-front"></div>
+          <div class="env-flap" id="flap"></div>
+
+          <div class="paper" id="paper">
+            <div class="paper-head">
+              <div class="stamp">💗</div>
+              <div class="paper-title">Happy Women’s Day</div>
+            </div>
+
+            <div class="paper-body">
+              <div class="to-line">
+                <span>Gửi</span>
+                <strong id="girlNameTo">...</strong>
+                <span>—</span>
+              </div>
+
+              <div class="typing" id="typing"></div>
+
+              <div class="paper-footer">
+                <div class="signature">
+                  <span class="sig">— From</span>
+                  <svg class="signature-svg" id="signatureSvg" viewBox="0 0 500 120" aria-label="Chữ ký Văn Tài">
+                    <text id="signatureText" x="20" y="80" font-size="64" font-family="'Brush Script MT', cursive"
+                      fill="none" stroke="currentColor" stroke-width="2.5">
+                      Văn Tài
+                    </text>
+                  </svg>
+                </div>
+                <button class="again-btn" id="againBtn">Xem lại ảnh ✨</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="letter-tip">
+          Thay lời muốn nói
+        </div>
+      </div>
+    </section>
+
+    <!-- Screen 4 -->
+    <section class="screen screen-4" data-screen="4" aria-hidden="true">
+      <header class="topbar">
+        <button class="back-btn" id="backFromGarden" aria-label="Quay lại">←</button>
+        <div class="who">
+          <span class="pill">Vườn điều ước</span>
+          <strong id="gardenName">Bạn</strong>
+        </div>
+        <div style="width:42px"></div>
+      </header>
+
+      <div class="garden-wrap card">
+        <div class="garden-header">
+          <h2>Gieo một điều ước hôm nay 🌷</h2>
+          <p>Không cần database đâu nè — tiến trình sẽ được lưu ngay trên trình duyệt của bạn.</p>
+        </div>
+        <div class="garden-meta" aria-live="polite">
+          <div class="garden-stat"><span>🎯 Đã mở hôm nay</span><strong id="wishDailyCount">0/3</strong></div>
+          <div class="garden-stat"><span>🔥 Streak</span><strong id="wishStreak">0 ngày</strong></div>
+          <div class="garden-stat"><span>🏆 Hiếm đã mở</span><strong id="wishRareCount">0</strong></div>
+        </div>
+        <div class="garden-actions">
+          <button class="explore-btn garden-draw-btn" id="drawWishBtn">🎁 Nhận điều ước ngẫu nhiên</button>
+          <button class="again-btn garden-reset-btn" id="resetGardenBtn" type="button">Reset tiến trình</button>
+        </div>
+        <p class="garden-tip" id="gardenTip">Mỗi ngày bạn có thể mở tối đa 3 bông hoa ✨</p>
+        <div class="wish-grid" id="wishGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <audio id="bgm" preload="auto" loop autoplay>
+    <source src="./assets/mp3.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
